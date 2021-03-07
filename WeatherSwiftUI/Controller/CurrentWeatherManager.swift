@@ -26,7 +26,7 @@ extension WeatherManager {
     
     func getCurrentImage() -> String {
         guard let weatherData = weatherData else { return "sun.max.fill" }
-    
+        print(weatherData.current.condition.text)
         return getImageName(name: weatherData.current.condition.text)
     }
 }

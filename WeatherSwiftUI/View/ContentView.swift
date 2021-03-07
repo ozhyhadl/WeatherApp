@@ -20,7 +20,7 @@ struct ContentView: View {
                 CityTextView()
                 TodayWeatherView(temperatureToday: weather.getCurrentTemperature(),
                                  imageName: weather.getCurrentImage(),
-                                 text: weather.getCurrentWeatherText())
+                                 text: weather.getCurrentWeatherText(), forecastText: weather.getCurrentWeatherText())
                 
                 
                 HStack(spacing: 30) {
@@ -115,6 +115,7 @@ struct TodayWeatherView: View {
     var temperatureToday: String
     var imageName: String
     var text: String
+    var forecastText: String
     
     var body: some View {
         VStack(spacing: 12) {
@@ -125,7 +126,7 @@ struct TodayWeatherView: View {
                 .frame(width: 180
                        , height: 180)
                 .padding(.bottom, 20)
-            Text("Hevy snow")
+            Text(forecastText)
                 .font(.system(size: 24, weight: .medium))
                 .foregroundColor(.white)
             Text(temperatureToday)
